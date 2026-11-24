@@ -11,7 +11,7 @@ import { sumMoney, summarize, tradesBetween } from "../utils/stats.js";
 function ActionCard({ href, onClick, title, subtitle }) {
   const content = (
     <>
-      <div className="min-w-0"><b className="block">{title}</b><span className="block text-[13px] text-muted">{subtitle}</span></div>
+      <div className="min-w-0"><b className="block">{title}</b><span className="block text-[0.8125rem] text-muted">{subtitle}</span></div>
       <span className="text-lg text-faint" aria-hidden="true">→</span>
     </>
   );
@@ -54,9 +54,9 @@ export default function HomePage() {
         <section className="card p-5 sm:p-8">
           <div className="label">Net P&amp;L · {formatMonth(year, month).split(" ")[0]}</div>
           {status === "loading" ? (
-            <div className="num mt-2.5 mb-1.5 text-[40px] leading-[1.05] font-semibold text-faint sm:text-[52px] lg:text-[64px]">…</div>
+            <div className="num mt-2.5 mb-1.5 text-[2.5rem] leading-[1.05] font-semibold text-faint sm:text-[3.25rem] lg:text-[4rem]">…</div>
           ) : (
-            <div className={`num mt-2.5 mb-1.5 text-[40px] leading-[1.05] font-semibold tracking-[-0.02em] sm:text-[52px] lg:text-[64px] ${pnlClass(monthStats.netPnl)}`}>
+            <div className={`num mt-2.5 mb-1.5 text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.02em] sm:text-[3.25rem] lg:text-[4rem] ${pnlClass(monthStats.netPnl)}`}>
               {formatMoney(monthStats.netPnl)}
             </div>
           )}
@@ -73,7 +73,7 @@ export default function HomePage() {
         </section>
         <section className="card flex flex-col justify-between gap-5 p-5 sm:p-8">
           <div className="label">Quote of the day</div>
-          <blockquote className="text-lg leading-snug font-medium text-balance sm:text-[22px]">“{quote.text}”</blockquote>
+          <blockquote className="text-lg leading-snug font-medium text-balance sm:text-[1.375rem]">“{quote.text}”</blockquote>
           <div className="flex flex-wrap items-center justify-between gap-3"><cite className="text-muted not-italic">{quote.author}</cite><span className="hint">Refreshes daily</span></div>
         </section>
         {status === "ready" && trades.length === 0 && (

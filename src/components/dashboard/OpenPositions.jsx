@@ -26,7 +26,7 @@ export default function OpenPositions({ trades }) {
               className="grid cursor-pointer grid-cols-[1fr_auto] gap-x-3 gap-y-1 bg-transparent py-3.5 text-left first:pt-1 hover:opacity-90"
             >
               <div className="min-w-0">
-                <div className="text-[15px] font-semibold"><PairLabel pair={t.pair} /> <Pill value={t.type} /></div>
+                <div className="text-[0.9375rem] font-semibold"><PairLabel pair={t.pair} /> <Pill value={t.type} /></div>
                 <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-muted">
                   <span>Opened {formatShortDate(t.date)}</span><span aria-hidden="true">·</span>
                   <span>Risk {orDash(t.riskLevel)}</span><span aria-hidden="true">·</span>
@@ -35,7 +35,7 @@ export default function OpenPositions({ trades }) {
                 </div>
               </div>
               <div className="text-right">
-                <div className={`num text-[17px] font-semibold ${pnlClass(t.pnl)}`}>{formatMoney(t.pnl)}</div>
+                <div className={`num text-[1.0625rem] font-semibold ${pnlClass(t.pnl)}`}>{formatMoney(t.pnl)}</div>
                 <div className="hint">unrealised</div>
               </div>
             </button>

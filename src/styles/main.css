@@ -51,13 +51,18 @@
   --font-emoji: "Noto Color Emoji Flags", "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
 
   --radius-card: 12px;
-  --container-page: 1180px;
-  --container-page-wide: 1320px;
+  --container-page: 1440px;
+  --container-page-wide: 1760px;
 }
 
 @layer base {
   :root { color-scheme: light; }
-  html { -webkit-text-size-adjust: 100%; }
+  /* Everything is sized in rem, so this one value scales all text and spacing: 17px on phones and tablets, 18px on laptops and up. */
+  html {
+    -webkit-text-size-adjust: 100%;
+    font-size: 106.25%;
+    @variant lg { font-size: 112.5%; }
+  }
   body {
     @apply bg-bg text-fg font-sans text-sm leading-normal antialiased;
   }
@@ -83,14 +88,14 @@
       padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
     }
     @variant lg {
-      padding-left: max(2rem, env(safe-area-inset-left, 0px));
-      padding-right: max(2rem, env(safe-area-inset-right, 0px));
+      padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
     }
   }
 
   .card { @apply min-w-0 rounded-card border border-line bg-surface p-4 shadow-[0_1px_2px_rgba(15,23,42,0.04)] sm:p-5; }
   .label { @apply text-xs font-medium tracking-[0.02em] text-muted; }
-  .hint { @apply text-[11px] text-faint; }
+  .hint { @apply text-[0.6875rem] text-faint; }
   .sub { @apply mt-1 text-muted; }
   .num { font-variant-numeric: tabular-nums; }
 
@@ -108,26 +113,26 @@
 
   .chip {
     @apply inline-flex min-h-9 cursor-pointer items-center whitespace-nowrap rounded-full border border-line
-           bg-transparent px-3 text-[13px] font-medium text-muted hover:text-fg
+           bg-transparent px-3 text-[0.8125rem] font-medium text-muted hover:text-fg
            aria-pressed:border-fg aria-pressed:bg-fg aria-pressed:text-bg sm:min-h-8;
   }
   .chip-sm { @apply px-2.5 text-xs; }
 
-  .pill { @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-0.5 text-[11px] font-semibold tracking-[0.04em]; }
+  .pill { @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2 py-0.5 text-[0.6875rem] font-semibold tracking-[0.04em]; }
   .pill-profit { @apply bg-profit/15 text-profit; }
   .pill-loss { @apply bg-loss/15 text-loss; }
   .pill-be { @apply bg-be/15 text-be; }
   .pill-run { @apply bg-run/15 text-run before:size-1.5 before:rounded-full before:bg-current before:content-['']; }
 
-  .tag { @apply inline-block whitespace-nowrap rounded-[5px] border border-line bg-surface-2 px-1.5 py-0.5 text-[11px] text-muted; }
+  .tag { @apply inline-block whitespace-nowrap rounded-[5px] border border-line bg-surface-2 px-1.5 py-0.5 text-[0.6875rem] text-muted; }
 
   .flag { @apply mr-1.5 inline-block align-[-1px] font-emoji text-[1.05em] font-normal leading-none; }
-  .metal { @apply mr-1.5 inline-grid size-[17px] place-items-center rounded-full align-[-3px] text-[8.5px] font-bold; }
+  .metal { @apply mr-1.5 inline-grid size-[17px] place-items-center rounded-full align-[-3px] text-[0.5313rem] font-bold; }
   .metal-xau { @apply bg-linear-135 from-[#f6d77a] to-[#c9971c] text-[#2a1d00]; }
   .metal-xag { @apply bg-linear-135 from-[#eef0f4] to-[#9aa0ad] text-[#1c1f26]; }
 
   .seg-btn {
-    @apply min-h-9 flex-1 cursor-pointer rounded-md border-0 bg-transparent px-1.5 text-[13px] font-semibold text-muted
+    @apply min-h-9 flex-1 cursor-pointer rounded-md border-0 bg-transparent px-1.5 text-[0.8125rem] font-semibold text-muted
            aria-pressed:bg-surface-2 aria-pressed:text-fg;
   }
 }

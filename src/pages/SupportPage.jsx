@@ -82,7 +82,7 @@ export default function SupportPage() {
                 {TOPICS.map(([topic, description]) => (
                   <button key={topic} type="button" aria-pressed={form.topic === topic} onClick={() => setField("topic", topic)}
                     className="cursor-pointer rounded-[10px] border border-line bg-bg p-3 text-left aria-pressed:border-accent aria-pressed:bg-accent/10">
-                    <b className="block text-[13px]">{topic}</b><span className="text-xs text-muted">{description}</span>
+                    <b className="block text-[0.8125rem]">{topic}</b><span className="text-xs text-muted">{description}</span>
                   </button>
                 ))}
               </div>
@@ -102,7 +102,7 @@ export default function SupportPage() {
               <textarea className={`input min-h-[110px] resize-y ${errors.message ? "border-loss" : ""}`} id="s-msg" placeholder="What happened, and what did you expect?" value={form.message} onChange={(e) => setField("message", e.target.value)} />
             </Field>
             <Field label="Screenshot (optional)">
-              <label className="cursor-pointer rounded-[10px] border border-dashed border-line p-4 text-center text-[13px]" htmlFor="s-file">
+              <label className="cursor-pointer rounded-[10px] border border-dashed border-line p-4 text-center text-[0.8125rem]" htmlFor="s-file">
                 {form.screenshot ? <>Attached: <b>{form.screenshot.name}</b> · <u>change</u></> : <>Drop an image or <u>browse</u></>}
               </label>
               <input ref={fileInput} id="s-file" type="file" accept="image/*" hidden onChange={(e) => setField("screenshot", e.target.files[0] ?? null)} />

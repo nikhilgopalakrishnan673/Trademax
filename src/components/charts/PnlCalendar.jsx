@@ -12,7 +12,7 @@ const TONE = {
   none: "border-transparent bg-surface-2",
 };
 const CELL =
-  "flex aspect-square min-w-0 flex-col justify-between rounded-md border p-[3px] text-[9px] min-[360px]:p-1 min-[360px]:text-[10px] sm:aspect-[1.15] sm:rounded-lg sm:px-[7px] sm:py-1.5 sm:text-[11px]";
+  "flex aspect-square min-w-0 flex-col justify-between rounded-md border p-[3px] text-[0.5625rem] min-[360px]:p-1 min-[360px]:text-[0.625rem] sm:aspect-[1.15] sm:rounded-lg sm:px-[7px] sm:py-1.5 sm:text-[0.6875rem]";
 
 function MonthButton({ label, onClick, children }) {
   return (
@@ -52,7 +52,7 @@ export default function PnlCalendar({ days }) {
 
       <div className="grid grid-cols-7 gap-1 sm:gap-1.5">
         {WEEKDAYS.map((d) => (
-          <div key={d} className="pb-1 text-center text-[10px] text-faint sm:text-[11px]">
+          <div key={d} className="pb-1 text-center text-[0.625rem] text-faint sm:text-[0.6875rem]">
             <span className="sm:hidden">{d[0]}</span>
             <span className="hidden sm:inline">{d}</span>
           </div>
@@ -75,7 +75,7 @@ export default function PnlCalendar({ days }) {
                     <span className="sm:hidden">{formatCompact(day.net)}</span>
                     <span className="hidden sm:inline">{formatMoney(day.net)}</span>
                   </div>
-                  <div className="hidden text-[10px] text-muted md:block">{plural(day.trades.length, "trade")}</div>
+                  <div className="hidden text-[0.625rem] text-muted md:block">{plural(day.trades.length, "trade")}</div>
                 </div>
               )}
             </div>

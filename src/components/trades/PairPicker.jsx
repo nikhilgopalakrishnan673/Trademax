@@ -65,7 +65,7 @@ export default function PairPicker({ value, onChange, invalid }) {
         onClick={() => { setQuery(""); setOpen((o) => !o); }}
       >
         <PairLabel pair={value} bold />
-        <span className="ml-auto text-[11px] text-faint" aria-hidden="true">▼</span>
+        <span className="ml-auto text-[0.6875rem] text-faint" aria-hidden="true">▼</span>
       </button>
       {open && (
         <div className="absolute inset-x-0 top-[calc(100%+6px)] z-10 rounded-[10px] border border-line bg-surface p-2 shadow-[0_14px_34px_rgba(15,23,42,.12)] min-[400px]:right-auto min-[400px]:w-[min(320px,calc(100vw-48px))]">
@@ -83,7 +83,7 @@ export default function PairPicker({ value, onChange, invalid }) {
             {groups.length === 0 && <div className="py-5 text-center text-muted">No pair matches “{query.trim()}”</div>}
             {groups.map(([group, pairs]) => (
               <div key={group}>
-                <div className="px-2 pt-2.5 pb-1 text-[11px] tracking-[0.06em] text-faint uppercase">{group}</div>
+                <div className="px-2 pt-2.5 pb-1 text-[0.6875rem] tracking-[0.06em] text-faint uppercase">{group}</div>
                 {pairs.map((pair) => (
                   <button
                     key={pair}
@@ -94,7 +94,7 @@ export default function PairPicker({ value, onChange, invalid }) {
                     className="flex min-h-10 w-full cursor-pointer items-center rounded-[7px] border-0 bg-transparent px-2 text-left font-medium hover:bg-surface aria-selected:bg-surface sm:min-h-9"
                   >
                     <PairLabel pair={pair} />
-                    <span className="ml-auto text-[11px] font-normal text-faint">{INDICES[pair] ?? strongCurrency(pair)}</span>
+                    <span className="ml-auto text-[0.6875rem] font-normal text-faint">{INDICES[pair] ?? strongCurrency(pair)}</span>
                   </button>
                 ))}
               </div>

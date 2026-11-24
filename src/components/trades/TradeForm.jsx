@@ -108,7 +108,7 @@ export default function TradeForm({ tradeId, defaults, onClose }) {
       }
     >
       {errors.form && (
-        <p className="rounded-[9px] border border-loss/40 bg-loss/10 px-3 py-2.5 text-[13px] text-loss" role="alert">{errors.form}</p>
+        <p className="rounded-[9px] border border-loss/40 bg-loss/10 px-3 py-2.5 text-[0.8125rem] text-loss" role="alert">{errors.form}</p>
       )}
 
       <div className="grid gap-4 min-[400px]:grid-cols-2 min-[400px]:gap-3.5">

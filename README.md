@@ -20,6 +20,10 @@ npm run preview    # serve the production build at http://localhost:4173
 To deploy, upload `dist/` to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, S3).
 URLs use the hash (`/#dashboard`), so the host needs no rewrite rules.
 
+## Legal pages and footer
+
+The footer is on every page except Login. `#terms-and-conditions` and `#privacy-policy` are draft templates that describe only what the app does today (everything stays in the browser). Highlighted `[placeholders]` mark details you must fill in (operator name, governing law, hosting provider). Have them reviewed by a legal professional before launch. Set `SUPPORT_EMAIL` in `src/config.js` to a real address and the footer's Contact link and the contact lines on both pages appear automatically.
+
 ## Folder structure
 
 ```
@@ -34,7 +38,9 @@ trading-journal/
 │   ├── styles/main.css           Tailwind theme tokens and shared classes
 │   ├── pages/                    One component per page
 │   │   ├── HomePage.jsx  DashboardPage.jsx  DailyStatsPage.jsx
-│   │   └── TradeLogPage.jsx  SupportPage.jsx  LoginPage.jsx
+│   │   ├── TradeLogPage.jsx  SupportPage.jsx  LoginPage.jsx
+│   │   └── TermsPage.jsx  PrivacyPage.jsx
+
 │   ├── components/
 │   │   ├── layout/               Navbar, Brand, PageHeader
 │   │   ├── dashboard/            StatCard, OpenPositions

@@ -1,7 +1,7 @@
 import Ring from "../charts/Ring.jsx";
 
 /** Value classes shared by dashboard cards. */
-export const STAT_VALUE = "num mt-1.5 text-[22px] leading-[1.1] font-semibold sm:text-[26px]";
+export const STAT_VALUE = "num mt-1.5 text-[1.375rem] leading-[1.1] font-semibold sm:text-[1.625rem]";
 export const STAT_FOOT = "mt-1.5 block text-xs text-muted";
 
 /** Dashboard card: label, big value, optional ring or extra content, and a footnote. */

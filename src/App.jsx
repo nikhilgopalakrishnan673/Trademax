@@ -1,5 +1,6 @@
 // App shell: shared state providers, the header, and the page for the current URL hash.
 import { useEffect } from "react";
+import Footer from "./components/layout/Footer.jsx";
 import Navbar from "./components/layout/Navbar.jsx";
 import { ProfileProvider } from "./context/ProfileContext.jsx";
 import { ToastProvider, useToast } from "./context/ToastContext.jsx";
@@ -10,7 +11,9 @@ import DailyStatsPage from "./pages/DailyStatsPage.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
+import PrivacyPage from "./pages/PrivacyPage.jsx";
 import SupportPage from "./pages/SupportPage.jsx";
+import TermsPage from "./pages/TermsPage.jsx";
 import TradeLogPage from "./pages/TradeLogPage.jsx";
 
 const PAGES = {
@@ -20,6 +23,8 @@ const PAGES = {
   "trade-log": TradeLogPage,
   support: SupportPage,
   login: LoginPage,
+  "terms-and-conditions": TermsPage,
+  "privacy-policy": PrivacyPage,
 };
 
 function Layout() {
@@ -40,12 +45,13 @@ function Layout() {
   }, [route]);
 
   return (
-    <>
+    <div className="flex min-h-dvh flex-col">
       {route !== "login" && <Navbar route={route} />}
-      <main className="gutter mx-auto max-w-page pt-6 pb-16 sm:pt-8 2xl:max-w-page-wide">
+      <main className="gutter mx-auto w-full max-w-page flex-1 pt-6 pb-16 sm:pt-8 2xl:max-w-page-wide">
         <Page />
       </main>
-    </>
+      {route !== "login" && <Footer route={route} />}
+    </div>
   );
 }
 

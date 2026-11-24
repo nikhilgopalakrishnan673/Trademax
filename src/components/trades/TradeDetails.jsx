@@ -62,7 +62,7 @@ export default function TradeDetails({ tradeId, onClose, onEdit }) {
   return (
     <SidePanel title="Trade details" onClose={onClose} footer={footer}>
       {confirmingDelete && (
-        <p className="rounded-[9px] border border-loss/40 bg-loss/10 px-3 py-2.5 text-[13px] text-loss" role="alert">
+        <p className="rounded-[9px] border border-loss/40 bg-loss/10 px-3 py-2.5 text-[0.8125rem] text-loss" role="alert">
           Delete this trade? It is removed from your journal and every statistic. This can't be undone.
         </p>
       )}

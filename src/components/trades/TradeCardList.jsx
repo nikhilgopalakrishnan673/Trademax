@@ -31,10 +31,10 @@ export default function TradeCardList({ trades }) {
         >
           <div className="flex items-start justify-between gap-3">
             <div className="min-w-0">
-              <div className="text-[15px] font-semibold"><PairLabel pair={t.pair} /></div>
+              <div className="text-[0.9375rem] font-semibold"><PairLabel pair={t.pair} /></div>
               <div className="hint mt-0.5">{formatShortDate(t.date)} · {orDash(t.entryMethod)} · Risk {orDash(t.riskLevel)}</div>
             </div>
-            <div className={`num text-right text-[17px] font-semibold ${pnlClass(t.pnl)}`}>{formatMoney(t.pnl)}</div>
+            <div className={`num text-right text-[1.0625rem] font-semibold ${pnlClass(t.pnl)}`}>{formatMoney(t.pnl)}</div>
           </div>
           <div className="mt-2.5 flex flex-wrap gap-1.5"><Pill value={t.type} /><Pill value={t.result} /></div>
           <div className="mt-3 divide-y divide-line border-t border-line">
@@ -42,7 +42,7 @@ export default function TradeCardList({ trades }) {
             <CardRow label="Market"><Tags items={t.marketConditions} /></CardRow>
             <CardRow label="Positive"><Tags items={t.positiveConfluences} /></CardRow>
             <CardRow label="Negative"><Tags items={t.negativeConfluences} /></CardRow>
-            {t.notes && <p className="line-clamp-3 pt-2.5 text-[13px] text-muted">{t.notes}</p>}
+            {t.notes && <p className="line-clamp-3 pt-2.5 text-[0.8125rem] text-muted">{t.notes}</p>}
           </div>
         </article>
       ))}
