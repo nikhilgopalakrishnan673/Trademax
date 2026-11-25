@@ -12,7 +12,7 @@ const TONE = {
   none: "border-transparent bg-surface-2",
 };
 const CELL =
-  "flex aspect-square min-w-0 flex-col justify-between rounded-md border p-[3px] text-[0.5625rem] min-[360px]:p-1 min-[360px]:text-[0.625rem] sm:aspect-[1.15] sm:rounded-lg sm:px-[7px] sm:py-1.5 sm:text-[0.6875rem]";
+  "flex aspect-square min-w-0 flex-col justify-between rounded-md border p-[3px] text-[0.5625rem] min-[360px]:p-1 min-[360px]:text-[0.625rem] sm:aspect-[1.15] lg:aspect-auto lg:min-h-14sm:rounded-lg sm:px-[7px] sm:py-1.5 sm:text-[0.6875rem]";
 
 function MonthButton({ label, onClick, children }) {
   return (
@@ -40,7 +40,7 @@ export default function PnlCalendar({ days }) {
   const monthNet = days.filter((d) => d.date.startsWith(monthPrefix)).reduce((sum, d) => sum + d.net, 0);
 
   return (
-    <section className="card">
+    <section className="card flex flex-col">
       <div className="mb-3.5 flex items-center justify-between gap-3">
         <h2 className="text-base">P&amp;L calendar</h2>
         <div className="flex items-center gap-1.5">
@@ -57,6 +57,8 @@ export default function PnlCalendar({ days }) {
             <span className="hidden sm:inline">{d}</span>
           </div>
         ))}
+      </div>
+      <div className="grid flex-1 grid-cols-7 gap-1 sm:gap-1.5 lg:auto-rows-fr">
         {Array.from({ length: leadingBlanks }, (_, i) => <div key={`blank-${i}`} />)}
         {Array.from({ length: daysInMonth }, (_, i) => {
           const date = `${monthPrefix}-${String(i + 1).padStart(2, "0")}`;

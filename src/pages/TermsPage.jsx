@@ -5,7 +5,7 @@ export default function TermsPage() {
     <LegalDocument title="Terms &amp; Conditions">
       <Section number={1} title="Introduction and acceptance of terms">
         <P>
-          Journal (the “Service”) is a web app for recording your own trades and viewing statistics worked out from them. The Service is
+          MIND METRICS (the “Service”) is a web app for recording your own trades and viewing statistics worked out from them. The Service is
           provided by <Placeholder>operator or company name and registered address</Placeholder>.
         </P>
         <P>

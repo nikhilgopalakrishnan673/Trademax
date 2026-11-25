@@ -36,7 +36,7 @@ export default function Navbar({ route }) {
   return (
     <header className="sticky top-[env(safe-area-inset-top,0px)] z-30 border-b border-line bg-bg/90 backdrop-blur-md">
       <div className="gutter mx-auto flex max-w-page items-center gap-3 py-3.5 md:gap-4 md:py-[22px] lg:gap-6 2xl:max-w-page-wide">
-        <a className="-my-2 flex items-center py-2 text-base text-fg no-underline" href="#home" aria-label="Journal, home">
+        <a className="-my-2 flex items-center py-2 text-base text-fg no-underline" href="#home" aria-label="MIND METRICS, home">
           <Brand />
         </a>
         <nav className="hidden min-w-0 flex-1 gap-1 md:flex" aria-label="Main">

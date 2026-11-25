@@ -17,7 +17,7 @@ export default function Footer({ route }) {
       <div className="gutter mx-auto max-w-page 2xl:max-w-page-wide">
         {/* Row 1: brand and description */}
         <div className="py-5 md:py-6">
-          <a className="-my-2 inline-flex items-center py-2 text-lg text-bg no-underline" href="#home" aria-label="Journal, home">
+          <a className="-my-2 inline-flex items-center py-2 text-lg text-bg no-underline" href="#home" aria-label="MIND METRICS, home">
             <Brand />
           </a>
           <p className="mt-2 max-w-xl text-[0.9375rem] leading-relaxed text-bg/70">
@@ -34,7 +34,7 @@ export default function Footer({ route }) {
               </a>
             ))}
           </nav>
-          <p className="py-1.5 text-[0.8125rem] text-bg/60">© {new Date().getFullYear()} Journal</p>
+          <p className="py-1.5 text-[0.8125rem] text-bg/60">© {new Date().getFullYear()} MIND METRICS</p>
         </div>
       </div>
     </footer>
